@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<FlowPane fx:id="flowPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainController">
+    <children>
+        <SplitPane fx:id="splitPane" dividerPositions="0.10588235294117647" orientation="VERTICAL" prefHeight="768.0" prefWidth="1132.0">
+            <items>
+                <AnchorPane fx:id="upPane" maxHeight="-Infinity" minHeight="-Infinity" minWidth="0.0" prefHeight="95.0" prefWidth="1134.0">
+                    <children>
+                        <Text fx:id="nowCatalogue" layoutX="119.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="当前目录：" wrappingWidth="103.30029296875">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
+                        <TextArea fx:id="addressText" layoutX="229.0" layoutY="30.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="336.0" text="C:">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextArea>
+                        <ImageView fx:id="backImage" fitHeight="40.0" fitWidth="40.0" layoutX="32.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+
+                        </ImageView>
+                  <Button fx:id="renovateButton" layoutX="581.0" layoutY="35.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" />
+                  <MenuButton fx:id="helpButton" layoutX="1017.0" layoutY="39.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="31.0">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="模拟文件系统说明" />
+                      <MenuItem mnemonicParsing="false" text="目录输入格式" />
+                        <MenuItem mnemonicParsing="false" text="开发信息" />
+                    </items>
+                     <graphic>
+                        <ImageView fx:id="helpImage" fitHeight="39.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </MenuButton>
+                  <Label fx:id="time" layoutX="952.0" layoutY="-1.0" prefHeight="30.0" prefWidth="178.0" textFill="#1296db" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="foldButton" layoutX="1070.0" layoutY="43.0" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fx:id="foldImageView" fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="downPane1" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                  <SplitPane fx:id="splitPane2" dividerPositions="0.17819148936170212" prefHeight="673.0" prefWidth="1130.0">
+                     <items>
+                        <Pane fx:id="leftPane" maxWidth="1000.0" prefHeight="900.0" prefWidth="1000.0">
+                           <children>
+                                        <TreeView fx:id="treeView" prefHeight="900.0" prefWidth="211.0" />
+                           </children>
+                        </Pane>
+                              <SplitPane dividerPositions="0.7334315169366715" orientation="VERTICAL" prefHeight="681.0" prefWidth="929.0">
+                                  <items>
+                              <SplitPane fx:id="splitPane1" dividerPositions="0.5" prefHeight="488.0" prefWidth="923.0">
+                                 <items>
+                                              <FlowPane fx:id="middlePane" prefHeight="494.0" prefWidth="673.0" />
+                                              <TableView fx:id="blockTable" minWidth="232.0" prefHeight="488.0" prefWidth="0.0" style="-fx-border-color: #d3d3d3;">
+                                                  <columns>
+                                                      <TableColumn fx:id="noCol" prefWidth="100.0" text="磁盘块" />
+                                                      <TableColumn fx:id="indexCol" prefWidth="54.0" text="值" />
+                                                      <TableColumn fx:id="registryCol" prefWidth="99.0" text="文件名" />
+                                                  </columns>
+                                              </TableView>
+                                 </items>
+                              </SplitPane>
+                              <Pane prefHeight="176.0" prefWidth="923.0">
+                                 <children>
+                                            <AnchorPane fx:id="downPane" minHeight="0.0" minWidth="0.0" prefHeight="175.0" prefWidth="923.0">
+                                                <children>
+                                                    <TableView fx:id="openedTable" layoutX="-2.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="50.0" prefHeight="175.0" prefWidth="929.0">
+                                                        <columns>
+                                                            <TableColumn fx:id="nameCol" prefWidth="75.0" text="文件名" />
+                                                            <TableColumn fx:id="flagCol" prefWidth="150.0" text="打开方式" />
+                                                            <TableColumn fx:id="diskCol" prefWidth="115.0" text="起始盘块号" />
+                                                            <TableColumn fx:id="pathCol" prefWidth="400.0" text="路径" />
+                                                            <TableColumn fx:id="lengthCol" prefWidth="184.0" text="文件长度" />
+                                                        </columns>
+                                                    </TableView>
+                                          <Label layoutX="403.0" layoutY="4.0" text="已打开文件表信息">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                                </children>
+                                            </AnchorPane>
+                                 </children>
+                              </Pane>
+                                  </items>
+                              </SplitPane>
+                     </items>
+                  </SplitPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</FlowPane>

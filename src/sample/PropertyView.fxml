@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="290.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PropertyController">
+   <children>
+      <Text layoutX="20.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="名称：" wrappingWidth="65.30029296875" />
+      <Text layoutX="20.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="文件类型：" />
+      <Text layoutX="20.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="位置：" />
+      <Text layoutX="20.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="大小：" />
+      <Text layoutX="20.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="占用空间：" />
+      <Text layoutX="20.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="建立时间：" />
+      <Text layoutX="20.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="属性：" />
+      <Text fx:id="text1" layoutX="100.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text fx:id="text2" layoutX="100.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" />
+      <Text fx:id="text3" layoutX="100.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <Text fx:id="text4" layoutX="100.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
+      <Text fx:id="text5" layoutX="100.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
+      <RadioButton fx:id="onlyRead" layoutX="85.0" layoutY="214.0" mnemonicParsing="false" onAction="#ReadAction" text="只读" />
+      <RadioButton fx:id="hide" layoutX="158.0" layoutY="214.0" mnemonicParsing="false" onAction="#hideAction" text="隐藏" />
+      <Label fx:id="fileName" layoutX="100.0" layoutY="34.0" prefHeight="20.0" prefWidth="132.0" />
+   </children>
+</AnchorPane>
